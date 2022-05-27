@@ -1,23 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+import EldenRingItemInfo from './Component/EldenRingItemInfo'
+import CategorySelector from './Component/CategorySelector'
 
 function App() {
+
+  const [data, setData] = useState([]);
+
+  const onChangeHandler = (evt) => {
+    evt.preventDefault();
+    const value = evt.target.value;
+    axios.get(`https://eldenring.fanapis.com/api/${value}?limit=1`)
+    .then(res => {
+      setData(res.data.data[0])
+      .catch(err => {
+        console.log(err)
+      })
+    })
+    
+}
+
+
+  useEffect(() => {
+    axios.get(`https://eldenring.fanapis.com/api/items?limit=1`)
+    .then(res => {
+      console.log(res)
+      setData(res.data.data[0])
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }, [])
+
+  console.log(data)
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CategorySelector onChangeHandler={onChangeHandler}/>
+      <EldenRingItemInfo data={data}/>
     </div>
   );
 }
