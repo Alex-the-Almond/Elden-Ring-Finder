@@ -1,13 +1,41 @@
 .App {
  text-align: center; 
- background-image: url('https://imgs.search.brave.com/hhWZ2f3p_6FVh3HiKQaGViU-ZCjyRVaUtyL-VtGt4g8/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9nYW1l/bHVzdGVyLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMS8w/Ni9FTERFTlJJTkdf/MDFfNEstc2NhbGVk/LmpwZw');
- color: white;
- text-shadow: 10px, black;
  background-size: 100%;
- 
 }
 
+.item {
+    margin: 20px;
+    background-image: url('https://imgs.search.brave.com/hhWZ2f3p_6FVh3HiKQaGViU-ZCjyRVaUtyL-VtGt4g8/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9nYW1l/bHVzdGVyLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMS8w/Ni9FTERFTlJJTkdf/MDFfNEstc2NhbGVk/LmpwZw');
+    background-size: cover;
+    padding: 1em;
+    color: rgb(24, 215, 212); 
+    text-shadow: 2px 2px black;
+    font-size: xx-large; 
+ }
 
+ .title {
+     color: black;
+     text-shadow: none;
+ }
+
+ .picture {
+    height: 250px;
+    background-color: rgba(0, 0, 0, .75);
+    border-radius: 15%;
+}
+
+.type-of-item {
+    height: 4em;
+    width: 14em;
+    font-size: 1em;
+}
+
+.search {
+    height: 4em;
+    width: 12em;
+    font-size: 1em;
+    text-indent: 3.6em;
+}
 
 
 
