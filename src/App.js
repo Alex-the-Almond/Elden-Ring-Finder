@@ -12,9 +12,10 @@ function App() {
   const onChangeHandler = (evt) => {
     evt.preventDefault();
     const value = evt.target.value;
-    axios.get(`https://eldenring.fanapis.com/api/${value}?limit=9999`)
+    axios.get(`https://eldenring.fanapis.com/api/${value}?limit=99`)
     .then(res => {
       setData(res.data.data)
+      console.log(setData)
       })
       .catch(err => {
         console.log(err)
@@ -28,7 +29,6 @@ function App() {
       if(item.name.toLowerCase().includes(value)){
         setViewData([item, ...viewData])
       }
-      console.log(data)
     })
   }
 
@@ -38,7 +38,7 @@ function App() {
 }
 
   useEffect(() => {
-    axios.get(`https://eldenring.fanapis.com/api/items?limit=9999`)
+    axios.get(`https://eldenring.fanapis.com/api/items?limit=99`)
     .then(res => {
       setData(res.data.data)
     })
@@ -49,7 +49,7 @@ function App() {
 
    return (
     <div className="App">
-      <CategorySelector onChangeHandler={onChangeHandler} onSearchHandler={onSearchHandler} />
+      <CategorySelector onChangeHandler={onChangeHandler} onSearchHandler={onSearchHandler} onSubmit={onSubmit}/>
       {
         viewData.map((data, elem) =>(
           <EldenRingItemInfo data={data} key={elem} className='item'/>

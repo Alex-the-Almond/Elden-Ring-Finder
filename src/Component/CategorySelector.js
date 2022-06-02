@@ -22,7 +22,7 @@ const CategorySelector = (props) => {
                 </label>
         </form>
         
-        <form>
+        <form onSubmit={onSubmit}>
             <div>
                     <label>
                         <input type='text' placeholder='--Search--' className='search' onChange={onSearchHandler} value={search}/>
