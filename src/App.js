@@ -4,7 +4,7 @@ import axios from 'axios'
 import EldenRingItemInfo from './Component/EldenRingItemInfo'
 import CategorySelector from './Component/CategorySelector'
 
-const initial = setup
+
 function App() {
 
   const [data, setData] = useState([]);
